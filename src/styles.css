@@ -200,6 +200,11 @@ h1 {
   margin-bottom: 24px;
 }
 
+.highlight-name {
+  color: var(--text);
+  font-weight: 800;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -309,6 +314,36 @@ h1 {
   object-fit: cover;
   object-position: center 18%;
   display: block;
+}
+
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.about-name-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.about-name {
+  margin: 0;
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.about-role {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.95rem;
 }
 
 .card-content {

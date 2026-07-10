@@ -184,9 +184,10 @@ function App() {
               <p className="eyebrow">Computer Engineering Student</p>
               <h1>Designing. Building. Solving.</h1>
               <p className="lead">
-                I’m Ishaan Jog, a computer engineering student focused on software
-                development, problem solving, and building projects that feel
-                practical in internships, academic work, and real-world use.
+                I’m <span className="highlight-name">Ishaan Jog</span>, a computer
+                engineering student focused on software development, problem solving,
+                and building projects that feel practical in internships, academic
+                work, and real-world use.
               </p>
 
               <div className="hero-actions">
@@ -229,8 +230,14 @@ function App() {
               <h2>Focused on learning, building, and improving consistently.</h2>
             </div>
             <div className="panel">
-              <div className="about-portrait">
-                <img src={photo} alt="Ishaan Jog portrait" />
+              <div className="about-header">
+                <div className="about-portrait">
+                  <img src={photo} alt="Ishaan Jog portrait" />
+                </div>
+                <div className="about-name-block">
+                  <p className="about-name">Ishaan Jog</p>
+                  <p className="about-role">Computer Engineering Student</p>
+                </div>
               </div>
               <p>
                 I’m currently pursuing computer engineering and enjoy working on
