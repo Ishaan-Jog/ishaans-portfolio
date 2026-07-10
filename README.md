@@ -1,6 +1,6 @@
 # Ishaan Jog Portfolio
 
-This is a personal portfolio website for a computer engineering student. The site is designed to feel minimal, professional, and easy to explore.
+This is my personal portfolio website created using React. The site is designed to feel minimal, professional, and easy to explore.
 
 ## What the portfolio includes
 
