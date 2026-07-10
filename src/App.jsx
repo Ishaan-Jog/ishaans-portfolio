@@ -43,6 +43,27 @@ const timelineData = [
   },
 ];
 
+const achievementData = [
+  {
+    year: "2024-2026",
+    title: "Competition Winner",
+    text: "Won prizes in multiple inter-collegite tech-fests.",
+    category: "Competition",
+  },
+  {
+    year: "2023",
+    title: "JLPT N4",
+    text: "Cleared Japanese Language Proficiency Test level N4 with distinction.",
+    category: "Exam",
+  },
+  {
+    year: "2022",
+    title: "JLPT N5",
+    text: "Cleared Japanese Language Proficiency Test level N5 with distinction.",
+    category: "Exam",
+  },
+];
+
 const skills = [
   "Python",
   "Java",
@@ -82,6 +103,7 @@ function App() {
     about: false,
     projects: false,
     experience: false,
+    achievements: false,
     skills: false,
     contact: false,
   });
@@ -117,14 +139,15 @@ function App() {
     };
 
     if (!("IntersectionObserver" in window)) {
-      setRevealed({
-        home: true,
-        about: true,
-        projects: true,
-        experience: true,
-        skills: true,
-        contact: true,
-      });
+        setRevealed({
+          home: true,
+          about: true,
+          projects: true,
+          experience: true,
+          achievements: true,
+          skills: true,
+          contact: true,
+        });
       animateCounters();
       return undefined;
     }
@@ -166,7 +189,7 @@ function App() {
             IJ
           </button>
           <nav className="nav" aria-label="Primary">
-            {["about", "projects", "experience", "skills", "contact"].map((item) => (
+            {["about", "projects", "experience", "achievements", "skills", "contact"].map((item) => (
               <button
                 key={item}
                 className={activeSection === item ? "active" : ""}
@@ -300,6 +323,23 @@ function App() {
                     <p>{entry.text}</p>
                   </div>
                 </div>
+              ))}
+            </div>
+          </section>
+
+          <section className={`section reveal ${revealed.achievements ? "visible" : ""}`} id="achievements" data-section="achievements">
+            <div className="section-title">
+              <p className="eyebrow">Achievements</p>
+              <h2>Milestones worth showcasing.</h2>
+            </div>
+            <div className="cards achievements-cards">
+              {achievementData.map((achievement) => (
+                <article className="project-card achievement-card" key={achievement.year + achievement.title}>
+                  <p className="project-tag">{achievement.category}</p>
+                  <h3>{achievement.title}</h3>
+                  <p>{achievement.text}</p>
+                  <div className="achievement-year">{achievement.year}</div>
+                </article>
               ))}
             </div>
           </section>

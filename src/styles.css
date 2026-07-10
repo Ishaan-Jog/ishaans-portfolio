@@ -396,6 +396,10 @@ h1 {
   gap: 18px;
 }
 
+.achievements-cards {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .project-card {
   border-radius: 24px;
   padding: 22px;
@@ -437,6 +441,18 @@ h1 {
 .project-link-arrow {
   font-size: 1rem;
   line-height: 1;
+}
+
+.achievement-card {
+  min-height: 220px;
+}
+
+.achievement-year {
+  margin-top: auto;
+  padding-top: 18px;
+  color: var(--accent-strong);
+  font-weight: 800;
+  font-size: 0.92rem;
 }
 
 .project-tag {
@@ -572,7 +588,8 @@ h1 {
   .hero,
   .grid-two,
   .stats,
-  .cards {
+  .cards,
+  .achievements-cards {
     grid-template-columns: 1fr;
   }
 
