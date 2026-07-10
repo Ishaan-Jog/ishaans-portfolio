@@ -1,4 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
+import photo from "../static/ishaan_photo.jpeg";
+import emailIcon from "../static/email.svg";
+import linkedinIcon from "../static/linkedin.svg";
+import githubIcon from "../static/github.svg";
 
 const projectData = [
   {
@@ -56,17 +60,17 @@ const socialLinks = [
   {
     label: "Email",
     href: "mailto:ishaanjog17@gmail.com",
-    icon: "/static/email.svg",
+    icon: emailIcon,
   },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/ishaan-jog-8531252b8/",
-    icon: "/static/linkedin.svg",
+    icon: linkedinIcon,
   },
   {
     label: "GitHub",
     href: "https://github.com/Ishaan-Jog/",
-    icon: "/static/github.svg",
+    icon: githubIcon,
   },
 ];
 
@@ -206,7 +210,7 @@ function App() {
 
           <aside className="hero-card">
               <div className="portrait">
-                <img src="/static/ishaan_photo.jpeg" alt="Ishaan Jog portrait" />
+                <img src={photo} alt="Ishaan Jog portrait" />
               </div>
               <div className="card-content">
                 <p className="card-label">Quick profile</p>
@@ -226,7 +230,7 @@ function App() {
             </div>
             <div className="panel">
               <div className="about-portrait">
-                <img src="/static/ishaan_photo.jpeg" alt="Ishaan Jog portrait" />
+                <img src={photo} alt="Ishaan Jog portrait" />
               </div>
               <p>
                 I’m currently pursuing computer engineering and enjoy working on
