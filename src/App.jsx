@@ -240,6 +240,7 @@ function App() {
                 <p className="card-label">Quick profile</p>
                 <ul>
                   <li>Location: Pune, Maharashtra, India</li>
+                  <li>Computer Engineering Student</li>
                   <li>Interests: Software, Cybersecurity, AI, and Web</li>
                   <li>Looking for: Internship and project opportunities</li>
                 </ul>

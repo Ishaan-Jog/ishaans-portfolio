@@ -10,12 +10,25 @@ Live site: https://ishaan-jog.netlify.app/
 - An about section with a brief personal summary
 - A projects section with project cards and outbound links
 - An experience section for internships, leadership, and academic work
+- An achievements section for competitions, exams, and milestones
 - A skills section for tools and technologies
 - A contact section with icon-based social links
 
-## Design direction
+## Technical Notes
 
-- Primary theme color: deep blue `#000080`
-- Soft gradient background with light depth
-- Balanced layout for both recruiters and general visitors
-- Subtle motion and scroll-based reveals
+- Built with React and Vite
+- Uses scroll-triggered reveal animations and active navigation state
+- Includes bundled image and icon assets for deployment compatibility
+- Supports a responsive single-page layout with smooth anchor navigation
+- Includes SEO metadata, `robots.txt`, and `sitemap.xml`
+- Includes Netlify deployment configuration and SPA redirects
+
+## Content Areas
+
+- Hero: concise introduction with quick stats and a profile card
+- About: personal summary with portrait and role label
+- Projects: sample work cards with outbound links
+- Experience: internships and contributor history
+- Achievements: competitions, exams, and other recognitions
+- Skills: technical tools and core strengths
+- Contact: social link buttons with icon assets
