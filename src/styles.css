@@ -435,6 +435,52 @@ h1 {
   font-weight: 700;
 }
 
+.social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 128, 0.12);
+  background: rgba(255, 255, 255, 0.66);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.social-button:hover {
+  transform: translateY(-2px);
+  background: rgba(0, 0, 128, 0.06);
+  border-color: rgba(0, 0, 128, 0.2);
+}
+
+.social-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  flex: 0 0 auto;
+}
+
+.social-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.social-label {
+  font-weight: 700;
+  color: var(--text);
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(18px);

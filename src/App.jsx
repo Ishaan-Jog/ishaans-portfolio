@@ -66,6 +66,36 @@ const skills = [
   "Problem Solving",
 ];
 
+const socialLinks = [
+  {
+    label: "Email",
+    href: "mailto:ishaanjog17@gmail.com",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11Zm2.2-.5 5.8 4.2 5.8-4.2H6.2Zm11.8 2.1-6 4.4a1 1 0 0 1-1.16 0l-6-4.4V17.5c0 .28.22.5.5.5h11a.5.5 0 0 0 .5-.5V8.1Z" />
+      </svg>
+    ),
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/ishaan-jog-8531252b8/",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6.94 6.5a1.44 1.44 0 1 1 0-2.88 1.44 1.44 0 0 1 0 2.88ZM5.5 8.5h2.88V20H5.5V8.5Zm4.8 0h2.75v1.57h.04c.38-.72 1.32-1.48 2.72-1.48 2.91 0 3.44 1.92 3.44 4.42V20h-2.88v-5.43c0-1.29-.03-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.86V20H10.3V8.5Z" />
+      </svg>
+    ),
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.7c-2.77.6-3.35-1.18-3.35-1.18-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.61.07-.61 1 .07 1.52 1.02 1.52 1.02.88 1.51 2.3 1.07 2.86.82.09-.65.35-1.07.63-1.32-2.21-.25-4.54-1.11-4.54-4.95 0-1.1.39-2 .99-2.71-.1-.25-.43-1.26.1-2.62 0 0 .82-.26 2.7 1.03a9.4 9.4 0 0 1 4.92 0c1.88-1.29 2.7-1.03 2.7-1.03.53 1.36.2 2.37.1 2.62.61.71.99 1.61.99 2.71 0 3.85-2.34 4.7-4.56 4.94.36.31.68.93.68 1.88v2.78c0 .27.18.59.69.48A10 10 0 0 0 12 2Z" />
+      </svg>
+    ),
+  },
+];
+
 function App() {
   const [activeSection, setActiveSection] = useState("home");
   const [counters, setCounters] = useState({ projects: 0, areas: 0, roles: 0 });
@@ -305,22 +335,22 @@ function App() {
               <h2>Open to internships, collaboration, and project work.</h2>
             </div>
             <div className="contact panel">
-              <p>
-                Email:
-                <a href="mailto:ishan.kumar@example.com">ishan.kumar@example.com</a>
-              </p>
-              <p>
-                LinkedIn:
-                <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
-                  linkedin.com/in/ishankumar
-                </a>
-              </p>
-              <p>
-                GitHub:
-                <a href="https://github.com" target="_blank" rel="noreferrer">
-                  github.com/ishankumar
-                </a>
-              </p>
+              <div className="social-buttons">
+                {socialLinks.map((item) => (
+                  <a
+                    key={item.label}
+                    className="social-button"
+                    href={item.href}
+                    target={item.href.startsWith("mailto:") ? undefined : "_blank"}
+                    rel={item.href.startsWith("mailto:") ? undefined : "noreferrer"}
+                    aria-label={item.label}
+                    title={item.label}
+                  >
+                    <span className="social-icon">{item.icon}</span>
+                    <span className="social-label">{item.label}</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </section>
         </main>
