@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ishaanjog.com/sitemap.xml
+Sitemap: https://ishaan-jog.netlify.app/sitemap.xml

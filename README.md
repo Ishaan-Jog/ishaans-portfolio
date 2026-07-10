@@ -2,6 +2,8 @@
 
 This is my personal portfolio website created using React. The site is designed to feel minimal, professional, and easy to explore.
 
+Live site: https://ishaan-jog.netlify.app/
+
 ## What the portfolio includes
 
 - A clean hero section with a short introduction
