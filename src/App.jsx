@@ -2,52 +2,38 @@ import { useEffect, useMemo, useState } from "react";
 
 const projectData = [
   {
-    tag: "Web App",
-    title: "Campus Connect",
+    tag: "AI/ML",
+    title: "PreSense",
     description:
-      "A student portal for notices, schedules, event updates, and document access. Built to make academic information easier to find in one place.",
-    stack: ["React", "Node.js", "MongoDB"],
-    link: "https://github.com",
+      "Real-Time ML Disaster Predictor and AI-based Civil Defense Orchestration System.",
+    stack: ["Python", "Streamlit", "AI/ML"],
+    link: "https://github.com/Ishaan-Jog/presense",
   },
   {
-    tag: "Automation",
-    title: "Attendance Tracker",
+    tag: "Mobile App",
+    title: "Aharix",
     description:
-      "A desktop-style tool that records attendance, calculates totals, and generates simple reports for classes or clubs.",
-    stack: ["Python", "SQLite", "Data Export"],
-    link: "https://github.com",
+      "A handy mobile app that alerts the user about unhealthy food items by fetching their nutritional facts from barcodes.",
+    stack: ["Android", "Kotlin"],
   },
   {
-    tag: "IoT",
-    title: "Smart Energy Monitor",
+    tag: "Photography",
+    title: "PhotoPix",
     description:
-      "A prototype that captures energy usage from a device and displays readings in a simple dashboard for better awareness.",
-    stack: ["ESP32", "Sensors", "Dashboard UI"],
-    link: "https://github.com",
-  },
-  {
-    tag: "Software",
-    title: "Task Planner",
-    description:
-      "A lightweight productivity app for organizing assignments, deadlines, and weekly priorities without unnecessary clutter.",
-    stack: ["JavaScript", "Local Storage", "Responsive Design"],
-    link: "https://github.com",
+      "A photography website where you can upload and view photos clicked by the developers Ishaan and Sarang using their exclusive visions!",
+    stack: ["Django", "HTML/CSS", "Web"],
+    link: "https://github.com/Ishaan-Jog/photopix-v2",
   },
 ];
 
 const timelineData = [
   {
-    year: "2026",
-    title: "Software Engineering Intern",
-    text: "Sample Company Name, building internal tools and learning collaborative development workflows.",
-  },
-  {
     year: "2025",
-    title: "Technical Lead, Student Club",
-    text: "Led event demos, project planning, and coordination across a small student team.",
+    title: "Software Developer Intern",
+    text: "Sub Fibo Technology Pvt. Ltd., Computer Graphics & CAD Customization",
   },
   {
-    year: "2024",
+    year: "2023",
     title: "Project Contributor",
     text: "Worked on coursework and personal projects focused on programming fundamentals and practical design.",
   },
@@ -70,29 +56,17 @@ const socialLinks = [
   {
     label: "Email",
     href: "mailto:ishaanjog17@gmail.com",
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11Zm2.2-.5 5.8 4.2 5.8-4.2H6.2Zm11.8 2.1-6 4.4a1 1 0 0 1-1.16 0l-6-4.4V17.5c0 .28.22.5.5.5h11a.5.5 0 0 0 .5-.5V8.1Z" />
-      </svg>
-    ),
+    icon: "/static/email.svg",
   },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/ishaan-jog-8531252b8/",
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M6.94 6.5a1.44 1.44 0 1 1 0-2.88 1.44 1.44 0 0 1 0 2.88ZM5.5 8.5h2.88V20H5.5V8.5Zm4.8 0h2.75v1.57h.04c.38-.72 1.32-1.48 2.72-1.48 2.91 0 3.44 1.92 3.44 4.42V20h-2.88v-5.43c0-1.29-.03-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.86V20H10.3V8.5Z" />
-      </svg>
-    ),
+    icon: "/static/linkedin.svg",
   },
   {
     label: "GitHub",
-    href: "https://github.com",
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.7c-2.77.6-3.35-1.18-3.35-1.18-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.61.07-.61 1 .07 1.52 1.02 1.52 1.02.88 1.51 2.3 1.07 2.86.82.09-.65.35-1.07.63-1.32-2.21-.25-4.54-1.11-4.54-4.95 0-1.1.39-2 .99-2.71-.1-.25-.43-1.26.1-2.62 0 0 .82-.26 2.7 1.03a9.4 9.4 0 0 1 4.92 0c1.88-1.29 2.7-1.03 2.7-1.03.53 1.36.2 2.37.1 2.62.61.71.99 1.61.99 2.71 0 3.85-2.34 4.7-4.56 4.94.36.31.68.93.68 1.88v2.78c0 .27.18.59.69.48A10 10 0 0 0 12 2Z" />
-      </svg>
-    ),
+    href: "https://github.com/Ishaan-Jog/",
+    icon: "/static/github.svg",
   },
 ];
 
@@ -185,7 +159,7 @@ function App() {
       <div className="page-shell">
         <header className="topbar">
           <button className="brand" onClick={() => scrollToSection("home")} aria-label="Go to home">
-            IK
+            IJ
           </button>
           <nav className="nav" aria-label="Primary">
             {["about", "projects", "experience", "skills", "contact"].map((item) => (
@@ -230,17 +204,16 @@ function App() {
               </div>
             </div>
 
-            <aside className="hero-card">
+          <aside className="hero-card">
               <div className="portrait">
-                <span>IK</span>
+                <img src="/static/ishaan_photo.jpeg" alt="Ishaan Jog portrait" />
               </div>
               <div className="card-content">
                 <p className="card-label">Quick profile</p>
                 <ul>
-                  <li>Location: India</li>
-                  <li>Interests: Web, software, and embedded systems</li>
-                  <li>Seeking: Internship and project opportunities</li>
-                  <li>Style: Minimal, practical, and detail-oriented</li>
+                  <li>Location: Pune, Maharashtra, India</li>
+                  <li>Interests: Software, Cybersecurity, AI, and Web</li>
+                  <li>Looking for: Internship and project opportunities</li>
                 </ul>
               </div>
             </aside>
@@ -252,6 +225,9 @@ function App() {
               <h2>Focused on learning, building, and improving consistently.</h2>
             </div>
             <div className="panel">
+              <div className="about-portrait">
+                <img src="/static/ishaan_photo.jpeg" alt="Ishaan Jog portrait" />
+              </div>
               <p>
                 I’m currently pursuing computer engineering and enjoy working on
                 projects that combine logic, structure, and user experience. I like
@@ -269,7 +245,7 @@ function App() {
           <section className={`section reveal ${revealed.projects ? "visible" : ""}`} id="projects" data-section="projects">
             <div className="section-title">
               <p className="eyebrow">Selected Projects</p>
-              <h2>Sample projects that reflect the kind of work I like to do.</h2>
+              <h2>Projects that reflect me.</h2>
             </div>
             <div className="cards">
               {projectData.map((project) => (
@@ -320,7 +296,7 @@ function App() {
           <section className={`section grid-two reveal ${revealed.skills ? "visible" : ""}`} id="skills" data-section="skills">
             <div className="section-title">
               <p className="eyebrow">Skills</p>
-              <h2>Technical tools I use and continue to improve.</h2>
+              <h2>Technical tools I use to learn and develop.</h2>
             </div>
             <div className="panel skills">
               {skills.map((skill) => (
@@ -346,7 +322,9 @@ function App() {
                     aria-label={item.label}
                     title={item.label}
                   >
-                    <span className="social-icon">{item.icon}</span>
+                    <span className="social-icon">
+                      <img src={item.icon} alt="" aria-hidden="true" />
+                    </span>
                     <span className="social-label">{item.label}</span>
                   </a>
                 ))}
