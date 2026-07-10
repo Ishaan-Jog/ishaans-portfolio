@@ -6,7 +6,7 @@ This is my personal portfolio website created using React. The site is designed 
 
 - A clean hero section with a short introduction
 - An about section with a brief personal summary
-- A projects section with sample project cards and outbound links
+- A projects section with project cards and outbound links
 - An experience section for internships, leadership, and academic work
 - A skills section for tools and technologies
 - A contact section with icon-based social links
