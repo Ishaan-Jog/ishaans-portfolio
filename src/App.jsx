@@ -3,6 +3,8 @@ import photo from "../static/ishaan_photo.jpeg";
 import emailIcon from "../static/email.svg";
 import linkedinIcon from "../static/linkedin.svg";
 import githubIcon from "../static/github.svg";
+import moonIcon from "../static/moon.svg";
+import sunIcon from "../static/sun.svg";
 
 const projectData = [
   {
@@ -98,6 +100,10 @@ const socialLinks = [
 function App() {
   const [activeSection, setActiveSection] = useState("home");
   const [counters, setCounters] = useState({ projects: 0, areas: 0, roles: 0 });
+  const [theme, setTheme] = useState(() => {
+    if (typeof window === "undefined") return "light";
+    return window.localStorage.getItem("theme") || "light";
+  });
   const [revealed, setRevealed] = useState({
     home: true,
     about: false,
@@ -116,6 +122,11 @@ function App() {
     ],
     []
   );
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    window.localStorage.setItem("theme", theme);
+  }, [theme]);
 
   useEffect(() => {
     const animateCounters = () => {
@@ -172,6 +183,10 @@ function App() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  const toggleTheme = () => {
+    setTheme((current) => (current === "light" ? "dark" : "light"));
+  };
+
   const bgOrbs = [
     { className: "bg-orb bg-orb-a" },
     { className: "bg-orb bg-orb-b" },
@@ -199,6 +214,19 @@ function App() {
               </button>
             ))}
           </nav>
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
+            title={theme === "light" ? "Dark mode" : "Light mode"}
+          >
+            <img
+              className={theme === "light" ? "theme-icon moon" : "theme-icon sun"}
+              src={theme === "light" ? moonIcon : sunIcon}
+              alt=""
+              aria-hidden="true"
+            />
+          </button>
         </header>
 
         <main>
