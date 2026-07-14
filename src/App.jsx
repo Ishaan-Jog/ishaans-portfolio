@@ -102,7 +102,7 @@ function App() {
   const [counters, setCounters] = useState({ projects: 0, areas: 0, roles: 0 });
   const [theme, setTheme] = useState(() => {
     if (typeof window === "undefined") return "light";
-    return window.localStorage.getItem("theme") || "light";
+    return window.localStorage.getItem("theme") || "dark";
   });
   const [revealed, setRevealed] = useState({
     home: true,
