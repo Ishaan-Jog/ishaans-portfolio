@@ -36,11 +36,13 @@ const timelineData = [
   {
     year: "2025",
     title: "Software Developer Intern",
-    text: "Sub Fibo Technology Pvt. Ltd., Computer Graphics & CAD Customization",
+    organization: "Sub Fibo Technology Pvt. Ltd.",
+    text: "Computer Graphics & CAD Customization",
   },
   {
     year: "2023",
     title: "Project Contributor",
+    organization: "Personal & Academic Projects",
     text: "Worked on coursework and personal projects focused on programming fundamentals and practical design.",
   },
 ];
@@ -348,7 +350,11 @@ function App() {
                 <div className="timeline-item" key={entry.year + entry.title}>
                   <span>{entry.year}</span>
                   <div>
-                    <h3>{entry.title}</h3>
+                    <div className="timeline-title-row">
+                      <h3>{entry.title}</h3>
+                      <span className="timeline-divider" aria-hidden="true" />
+                      <p className="timeline-org">{entry.organization}</p>
+                    </div>
                     <p>{entry.text}</p>
                   </div>
                 </div>

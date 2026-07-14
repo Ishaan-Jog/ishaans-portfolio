@@ -169,7 +169,7 @@ a {
 }
 
 .section {
-  margin: 28px 0;
+  margin: 40px 0;
 }
 
 .hero {
@@ -485,6 +485,36 @@ h1 {
   line-height: 1.75;
 }
 
+.timeline-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.timeline-title-row h3 {
+  margin-bottom: 0;
+}
+
+.timeline-divider {
+  width: 1px;
+  height: 1.1em;
+  background: var(--accent-strong);
+  opacity: 0.5;
+  align-self: center;
+  flex: 0 0 auto;
+}
+
+.timeline-org {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: right;
+  white-space: nowrap;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -767,6 +797,10 @@ h1 {
   .page-shell {
     width: min(100% - 20px, 1120px);
     padding-top: 12px;
+  }
+
+  .section {
+    margin: 32px 0;
   }
 
   .hero-copy,
