@@ -106,7 +106,7 @@ export function AchievementsSection({ visible, achievementData }) {
 export function SkillsSection({ visible, skills }) {
   return (
     <section className={`section grid-two reveal ${visible ? "visible" : ""}`} id="skills" data-section="skills">
-      <SectionTitle eyebrow="Skills" title="Technical tools I use to learn and develop." />
+      <SectionTitle eyebrow="Skills" title="Technologies I work with" />
       <div className="panel skills" data-cursor-trail>
         {skills.map((skill) => (
           <span key={skill}>{skill}</span>

@@ -5,8 +5,7 @@ export default function Hero({ assets, counters, stats, onNavigate }) {
         <p className="eyebrow">Computer Engineering Student</p>
         <h1>Designing. Building. Solving.</h1>
         <p className="lead">
-          I’m <span className="highlight-name">Ishaan Jog</span>, a computer engineering student focused on software development,
-          problem solving, and building projects that feel practical in internships, academic work, and real-world use.
+          I'm <span class="highlight-name">Ishaan Jog</span>, a Computer Engineering student passionate about software development, problem solving, and building impactful projects. I enjoy transforming ideas into practical applications while continuously learning through real-world experiences and hands-on development.
         </p>
 
         <div className="hero-actions">
