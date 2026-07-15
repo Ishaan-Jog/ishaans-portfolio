@@ -125,4 +125,3 @@ export const socialLinks = [
     icon: discordIcon,
   },
 ];
-
