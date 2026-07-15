@@ -2,6 +2,7 @@ import photo from "../../static/ishaan_photo.jpeg";
 import emailIcon from "../../static/email.svg";
 import linkedinIcon from "../../static/linkedin.svg";
 import githubIcon from "../../static/github.svg";
+import discordIcon from "../../static/discord.svg"
 import moonIcon from "../../static/moon.svg";
 import sunIcon from "../../static/sun.svg";
 
@@ -10,6 +11,7 @@ export const assets = {
   emailIcon,
   linkedinIcon,
   githubIcon,
+  discordIcon,
   moonIcon,
   sunIcon,
 };
@@ -66,7 +68,7 @@ export const achievementData = [
     year: "2026",
     title: "Research Paper for Aharix",
     text: "Published research paper titled \"Aharix app: An Intelligent Mobile Application for Grocery Barcode Scanning and Health-Aware Shopping\" on IJRASET.",
-    category: "Competition",
+    category: "Publication",
   },
   {
     year: "2024-2026",
@@ -116,6 +118,11 @@ export const socialLinks = [
     label: "GitHub",
     href: "https://github.com/Ishaan-Jog/",
     icon: githubIcon,
+  },
+  {
+    label: "Discord",
+    href: "https://discord.com/users/ishaan_jog178/",
+    icon: discordIcon,
   },
 ];
 
