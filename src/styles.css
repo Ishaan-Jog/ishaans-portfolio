@@ -72,17 +72,18 @@ a {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(circle 300px at var(--cursor-x) var(--cursor-y), rgba(48, 92, 222, 0.08), transparent 70%),
-    radial-gradient(circle 150px at var(--cursor-x) var(--cursor-y), rgba(48, 92, 222, 0.12), transparent 74%);
+    radial-gradient(circle 280px at var(--cursor-x) var(--cursor-y), rgba(48, 92, 222, 0.12), transparent 66%),
+    radial-gradient(circle 150px at var(--cursor-x) var(--cursor-y), rgba(48, 92, 222, 0.18), transparent 72%);
   opacity: var(--cursor-opacity);
   transition: opacity 240ms ease;
-  mix-blend-mode: screen;
+  mix-blend-mode: multiply;
 }
 
 :root[data-theme="dark"] .cursor-glow {
   background:
     radial-gradient(circle 320px at var(--cursor-x) var(--cursor-y), rgba(48, 92, 222, 0.1), transparent 70%),
     radial-gradient(circle 160px at var(--cursor-x) var(--cursor-y), rgba(48, 92, 222, 0.14), transparent 74%);
+  mix-blend-mode: screen;
 }
 
 .page-shell,
@@ -237,15 +238,16 @@ a {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle 120px at var(--trail-x, 50%) var(--trail-y, 50%), rgba(48, 92, 222, 0.15), transparent 68%);
+    radial-gradient(circle 120px at var(--trail-x, 50%) var(--trail-y, 50%), rgba(48, 92, 222, 0.18), transparent 64%);
   opacity: var(--trail-opacity, 0);
   transition: opacity 220ms ease;
-  mix-blend-mode: screen;
+  mix-blend-mode: multiply;
 }
 
 :root[data-theme="dark"] [data-cursor-trail]::after {
   background:
     radial-gradient(circle 130px at var(--trail-x, 50%) var(--trail-y, 50%), rgba(48, 92, 222, 0.16), transparent 68%);
+  mix-blend-mode: screen;
 }
 
 :root[data-theme="dark"] .hero-copy,
