@@ -10,6 +10,9 @@
   --accent: #305cde;
   --accent-soft: rgba(48, 92, 222, 0.14);
   --accent-strong: #2349b7;
+  --cursor-x: 50vw;
+  --cursor-y: 20vh;
+  --cursor-opacity: 0;
 }
 
 :root[data-theme="dark"] {
@@ -63,6 +66,35 @@ a {
   text-decoration: none;
 }
 
+.cursor-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(circle 300px at var(--cursor-x) var(--cursor-y), rgba(48, 92, 222, 0.08), transparent 70%),
+    radial-gradient(circle 150px at var(--cursor-x) var(--cursor-y), rgba(48, 92, 222, 0.12), transparent 74%);
+  opacity: var(--cursor-opacity);
+  transition: opacity 240ms ease;
+  mix-blend-mode: screen;
+}
+
+:root[data-theme="dark"] .cursor-glow {
+  background:
+    radial-gradient(circle 320px at var(--cursor-x) var(--cursor-y), rgba(48, 92, 222, 0.1), transparent 70%),
+    radial-gradient(circle 160px at var(--cursor-x) var(--cursor-y), rgba(48, 92, 222, 0.14), transparent 74%);
+}
+
+.page-shell,
+.bg-orb {
+  position: relative;
+  z-index: 1;
+}
+
+.topbar {
+  z-index: 20;
+}
+
 .bg-orb {
   position: fixed;
   border-radius: 999px;
@@ -93,12 +125,14 @@ a {
   position: relative;
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 24px 0 40px;
+  padding: 96px 0 40px;
 }
 
 .topbar {
-  position: sticky;
+  position: fixed;
   top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 20;
   display: flex;
   justify-content: space-between;
@@ -110,6 +144,7 @@ a {
   border-radius: 20px;
   background: rgba(228, 235, 255, 0.92);
   backdrop-filter: blur(14px);
+  width: min(1120px, calc(100% - 32px));
 }
 
 :root[data-theme="dark"] .topbar {
@@ -189,6 +224,28 @@ a {
   background: var(--card);
   box-shadow: var(--shadow);
   backdrop-filter: blur(12px);
+}
+
+[data-cursor-trail] {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-cursor-trail]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle 120px at var(--trail-x, 50%) var(--trail-y, 50%), rgba(48, 92, 222, 0.15), transparent 68%);
+  opacity: var(--trail-opacity, 0);
+  transition: opacity 220ms ease;
+  mix-blend-mode: screen;
+}
+
+:root[data-theme="dark"] [data-cursor-trail]::after {
+  background:
+    radial-gradient(circle 130px at var(--trail-x, 50%) var(--trail-y, 50%), rgba(48, 92, 222, 0.16), transparent 68%);
 }
 
 :root[data-theme="dark"] .hero-copy,
@@ -346,12 +403,31 @@ h1 {
   background:
     linear-gradient(180deg, rgba(241, 245, 255, 0.95), rgba(228, 236, 255, 0.95)),
     var(--card);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
 }
 
 :root[data-theme="dark"] .hero-card {
   background:
     linear-gradient(180deg, rgba(14, 22, 40, 0.98), rgba(10, 16, 30, 0.99)),
     var(--card);
+}
+
+.hero-card:hover,
+.panel:hover,
+.project-card:hover,
+.social-button:hover,
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  border-color: rgba(48, 92, 222, 0.28);
+  box-shadow: 0 18px 34px rgba(48, 92, 222, 0.12);
+}
+
+:root[data-theme="dark"] .hero-card:hover,
+:root[data-theme="dark"] .panel:hover,
+:root[data-theme="dark"] .project-card:hover,
+:root[data-theme="dark"] .social-button:hover,
+:root[data-theme="dark"] .theme-toggle:hover {
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.28);
 }
 
 .portrait {
@@ -749,6 +825,27 @@ h1 {
   transform: translateY(0);
 }
 
+@media (hover: none), (pointer: coarse) {
+  .cursor-glow {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-glow,
+  .bg-orb,
+  .reveal,
+  .button,
+  .project-card,
+  .social-button,
+  .theme-toggle,
+  .hero-card,
+  .panel {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
 .section-title h2,
 .about-name,
 .stats strong,
@@ -797,7 +894,7 @@ h1 {
 @media (max-width: 640px) {
   .page-shell {
     width: min(100% - 20px, 1120px);
-    padding-top: 12px;
+    padding-top: 104px;
   }
 
   .section {

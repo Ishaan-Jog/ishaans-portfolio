@@ -19,7 +19,7 @@ const projectData = [
     tag: "Mobile App",
     title: "Aharix",
     description:
-      "A handy mobile app that alerts the user about unhealthy food items by fetching their nutritional facts from barcodes.",
+      "[Private repository] A handy mobile app that alerts the user about unhealthy food items by fetching their nutritional facts from barcodes.",
     stack: ["Android", "Kotlin"],
   },
   {
@@ -126,8 +126,47 @@ function App() {
   );
 
   useEffect(() => {
+    const updateCursor = (event) => {
+      document.documentElement.style.setProperty("--cursor-x", `${event.clientX}px`);
+      document.documentElement.style.setProperty("--cursor-y", `${event.clientY}px`);
+      document.documentElement.style.setProperty("--cursor-opacity", "1");
+
+      const card = event.target.closest?.("[data-cursor-trail]");
+      if (card) {
+        const rect = card.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        card.style.setProperty("--trail-x", `${x}px`);
+        card.style.setProperty("--trail-y", `${y}px`);
+        card.style.setProperty("--trail-opacity", "1");
+      }
+    };
+
+    const hideCursorGlow = () => {
+      document.documentElement.style.setProperty("--cursor-opacity", "0");
+    };
+
+    const clearCardTrail = (event) => {
+      const card = event.target.closest?.("[data-cursor-trail]");
+      if (card) {
+        card.style.setProperty("--trail-opacity", "0");
+      }
+    };
+
+    window.addEventListener("mousemove", updateCursor);
+    window.addEventListener("mouseleave", hideCursorGlow);
+    window.addEventListener("blur", hideCursorGlow);
+    document.addEventListener("mouseout", clearCardTrail);
+
     document.documentElement.setAttribute("data-theme", theme);
     window.localStorage.setItem("theme", theme);
+
+    return () => {
+      window.removeEventListener("mousemove", updateCursor);
+      window.removeEventListener("mouseleave", hideCursorGlow);
+      window.removeEventListener("blur", hideCursorGlow);
+      document.removeEventListener("mouseout", clearCardTrail);
+    };
   }, [theme]);
 
   useEffect(() => {
@@ -196,6 +235,7 @@ function App() {
 
   return (
     <>
+      <div className="cursor-glow" aria-hidden="true" />
       {bgOrbs.map((orb) => (
         <div key={orb.className} className={orb.className} />
       ))}
@@ -233,7 +273,7 @@ function App() {
 
         <main>
           <section className={`hero section reveal ${revealed.home ? "visible" : ""}`} id="home" data-section="home">
-            <div className="hero-copy">
+            <div className="hero-copy" data-cursor-trail>
               <p className="eyebrow">Computer Engineering Student</p>
               <h1>Designing. Building. Solving.</h1>
               <p className="lead">
@@ -262,7 +302,7 @@ function App() {
               </div>
             </div>
 
-          <aside className="hero-card">
+          <aside className="hero-card" data-cursor-trail>
               <div className="portrait">
                 <img src={photo} alt="Ishaan Jog portrait" />
               </div>
@@ -283,7 +323,7 @@ function App() {
               <p className="eyebrow">About</p>
               <h2>Focused on learning, building, and improving consistently.</h2>
             </div>
-            <div className="panel">
+            <div className="panel" data-cursor-trail>
               <div className="about-header">
                 <div className="about-portrait">
                   <img src={photo} alt="Ishaan Jog portrait" />
@@ -314,7 +354,7 @@ function App() {
             </div>
             <div className="cards">
               {projectData.map((project) => (
-                <article className="project-card" key={project.title}>
+                <article className="project-card" key={project.title} data-cursor-trail>
                   <p className="project-tag">{project.tag}</p>
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
@@ -345,7 +385,7 @@ function App() {
               <p className="eyebrow">Experience</p>
               <h2>Academic, technical, and leadership experiences.</h2>
             </div>
-            <div className="timeline panel">
+            <div className="timeline panel" data-cursor-trail>
               {timelineData.map((entry) => (
                 <div className="timeline-item" key={entry.year + entry.title}>
                   <span>{entry.year}</span>
@@ -369,7 +409,7 @@ function App() {
             </div>
             <div className="cards achievements-cards">
               {achievementData.map((achievement) => (
-                <article className="project-card achievement-card" key={achievement.year + achievement.title}>
+                <article className="project-card achievement-card" key={achievement.year + achievement.title} data-cursor-trail>
                   <p className="project-tag">{achievement.category}</p>
                   <h3>{achievement.title}</h3>
                   <p>{achievement.text}</p>
@@ -384,7 +424,7 @@ function App() {
               <p className="eyebrow">Skills</p>
               <h2>Technical tools I use to learn and develop.</h2>
             </div>
-            <div className="panel skills">
+            <div className="panel skills" data-cursor-trail>
               {skills.map((skill) => (
                 <span key={skill}>{skill}</span>
               ))}
