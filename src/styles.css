@@ -170,6 +170,7 @@ a {
 
 .section {
   margin: 40px 0;
+  scroll-margin-top: 108px;
 }
 
 .hero {
@@ -801,6 +802,7 @@ h1 {
 
   .section {
     margin: 32px 0;
+    scroll-margin-top: 132px;
   }
 
   .hero-copy,
