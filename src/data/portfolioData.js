@@ -42,16 +42,22 @@ export const projectData = [
 
 export const timelineData = [
   {
-    year: "2025",
+    year: "Jul 2026",
+    title: "Java Intern",
+    organization: "Infosys Springboard",
+    text: "Java Tech Stack Intern at Infosys Springboard Virtual Internship 7.0"
+  },
+  {
+    year: "May 2026",
+    title: "Virtual Internship Program",
+    organization: "ServiceNow University",
+    text: "4-week Virtual Internship Program offered by ServiceNow University.",
+  },
+  {
+    year: "Jun-Aug 2025",
     title: "Software Developer Intern",
     organization: "Sub Fibo Technology Pvt. Ltd.",
     text: "Computer Graphics & CAD Customization",
-  },
-  {
-    year: "2023",
-    title: "Project Contributor",
-    organization: "Personal & Academic Projects",
-    text: "Worked on coursework and personal projects focused on programming fundamentals and practical design.",
   },
 ];
 
