@@ -63,6 +63,12 @@ export const timelineData = [
 
 export const achievementData = [
   {
+    year: "2026",
+    title: "Research Paper for Aharix",
+    text: "Published research paper titled \"Aharix app: An Intelligent Mobile Application for Grocery Barcode Scanning and Health-Aware Shopping\" on IJRASET.",
+    category: "Competition",
+  },
+  {
     year: "2024-2026",
     title: "Competition Winner",
     text: "Won prizes in multiple inter-collegite tech-fests.",
