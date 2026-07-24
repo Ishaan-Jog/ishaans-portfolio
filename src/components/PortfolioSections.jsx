@@ -73,7 +73,43 @@ export function ExperienceSection({ visible, timelineData }) {
             <div>
               <div className="timeline-title-row">
                 <h3>{entry.title}</h3>
-                <span className="timeline-divider" aria-hidden="true" />
+                <p className="timeline-org">{entry.organization}</p>
+              </div>
+              <p>{entry.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+const educationData = [
+  {
+    year: "2022-2026",
+    title: "B.Tech in Computer Engineering",
+    organization: "University / Institute Name",
+    text: "Focused on programming fundamentals, software development, data structures, computer networks, and systems-level thinking.",
+  },
+  {
+    year: "2020-2022",
+    title: "Higher Secondary Education",
+    organization: "School / Junior College Name",
+    text: "Built a foundation in mathematics, science, and problem solving that led into engineering studies.",
+  },
+];
+
+export function EducationSection({ visible }) {
+  return (
+    <section className={`section grid-two reveal ${visible ? "visible" : ""}`} id="education" data-section="education">
+      <SectionTitle eyebrow="Education" title="Where I built my academic foundation." />
+      <div className="timeline panel" data-cursor-trail>
+        {educationData.map((entry) => (
+          <div className="timeline-item" key={entry.year + entry.title}>
+            <span>{entry.year}</span>
+            <div>
+              <div className="timeline-title-row">
+                <h3>{entry.title}</h3>
                 <p className="timeline-org">{entry.organization}</p>
               </div>
               <p>{entry.text}</p>
@@ -143,4 +179,3 @@ export function ContactSection({ visible, socialLinks }) {
     </section>
   );
 }
-

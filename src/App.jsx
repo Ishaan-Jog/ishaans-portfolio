@@ -6,6 +6,7 @@ import {
   AchievementsSection,
   ContactSection,
   ExperienceSection,
+  EducationSection,
   ProjectsSection,
   SkillsSection,
 } from "./components/PortfolioSections";
@@ -23,6 +24,7 @@ function App() {
     about: false,
     projects: false,
     experience: false,
+    education: false,
     achievements: false,
     skills: false,
     contact: false,
@@ -108,6 +110,7 @@ function App() {
         about: true,
         projects: true,
         experience: true,
+        education: true,
         achievements: true,
         skills: true,
         contact: true,
@@ -166,6 +169,7 @@ function App() {
           <AboutSection visible={revealed.about} assets={assets} />
           <ProjectsSection visible={revealed.projects} projectData={projectData} />
           <ExperienceSection visible={revealed.experience} timelineData={timelineData} />
+          <EducationSection visible={revealed.education} />
           <AchievementsSection visible={revealed.achievements} achievementData={achievementData} />
           <SkillsSection visible={revealed.skills} skills={skills} />
           <ContactSection visible={revealed.contact} socialLinks={socialLinks} />

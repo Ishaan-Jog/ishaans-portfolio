@@ -5,7 +5,7 @@ export default function Topbar({ activeSection, onNavigate, theme, onToggleTheme
         IJ
       </button>
       <nav className="nav" aria-label="Primary">
-        {["about", "projects", "experience", "achievements", "skills", "contact"].map((item) => (
+        {["about", "projects", "experience", "education", "achievements", "skills", "contact"].map((item) => (
           <button
             key={item}
             className={activeSection === item ? "active" : ""}
@@ -31,4 +31,3 @@ export default function Topbar({ activeSection, onNavigate, theme, onToggleTheme
     </header>
   );
 }
-
