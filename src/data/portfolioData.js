@@ -50,6 +50,12 @@ export const timelineData = [
     text: "Java Tech Stack Intern at Infosys Springboard Virtual Internship 7.0"
   },
   {
+    year: "May-Jun 2026",
+    title: "Artificial Intelligence Internship",
+    organization: "Edunet Foundation",
+    text: "Virtual Internship Program in collaboration with AICTE and IBM SkillsBuild.",
+  },
+  {
     year: "May 2026",
     title: "Virtual Internship Program",
     organization: "ServiceNow University",
