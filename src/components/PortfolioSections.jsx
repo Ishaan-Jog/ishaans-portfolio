@@ -84,22 +84,7 @@ export function ExperienceSection({ visible, timelineData }) {
   );
 }
 
-const educationData = [
-  {
-    year: "2022-2026",
-    title: "B.Tech in Computer Engineering",
-    organization: "University / Institute Name",
-    text: "Focused on programming fundamentals, software development, data structures, computer networks, and systems-level thinking.",
-  },
-  {
-    year: "2020-2022",
-    title: "Higher Secondary Education",
-    organization: "School / Junior College Name",
-    text: "Built a foundation in mathematics, science, and problem solving that led into engineering studies.",
-  },
-];
-
-export function EducationSection({ visible }) {
+export function EducationSection({ visible, educationData }) {
   return (
     <section className={`section grid-two reveal ${visible ? "visible" : ""}`} id="education" data-section="education">
       <SectionTitle eyebrow="Education" title="Where I built my academic foundation." />

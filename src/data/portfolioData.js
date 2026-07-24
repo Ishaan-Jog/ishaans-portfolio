@@ -69,6 +69,21 @@ export const timelineData = [
   },
 ];
 
+export const educationData = [
+  {
+    year: "2023-2026",
+    title: "Diploma in Computer Engineering",
+    organization: "P. C. Polytechnic",
+    text: "Focused on programming fundamentals, software development, data structures, computer networks, and systems-level thinking.",
+  },
+  {
+    year: "2023",
+    title: "SSC (10th)",
+    organization: "Amrita Vidyalayam",
+    text: "Built a foundation in mathematics, science, and problem solving that led into engineering studies.",
+  },
+];
+
 export const achievementData = [
   {
     year: "2026",

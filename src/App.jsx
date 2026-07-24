@@ -10,7 +10,7 @@ import {
   ProjectsSection,
   SkillsSection,
 } from "./components/PortfolioSections";
-import { achievementData, assets, projectData, skills, socialLinks, timelineData } from "./data/portfolioData";
+import { achievementData, assets, projectData, skills, socialLinks, timelineData, educationData } from "./data/portfolioData";
 
 function App() {
   const [activeSection, setActiveSection] = useState("home");
@@ -169,7 +169,7 @@ function App() {
           <AboutSection visible={revealed.about} assets={assets} />
           <ProjectsSection visible={revealed.projects} projectData={projectData} />
           <ExperienceSection visible={revealed.experience} timelineData={timelineData} />
-          <EducationSection visible={revealed.education} />
+          <EducationSection visible={revealed.education} educationData={educationData} />
           <AchievementsSection visible={revealed.achievements} achievementData={achievementData} />
           <SkillsSection visible={revealed.skills} skills={skills} />
           <ContactSection visible={revealed.contact} socialLinks={socialLinks} />
