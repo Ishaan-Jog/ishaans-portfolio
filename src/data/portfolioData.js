@@ -71,6 +71,12 @@ export const timelineData = [
 
 export const educationData = [
   {
+    year: "2026-2029",
+    title: "B. Tech in Computer Engineering",
+    organization: "PCCOE, Pune",
+    text: "Focused on programming, development, data structures, computer networks, and systems-level thinking.",
+  },
+  {
     year: "2023-2026",
     title: "Diploma in Computer Engineering",
     organization: "P. C. Polytechnic",
@@ -120,7 +126,7 @@ export const skills = [
   "React",
   "SQL",
   "C/C++",
-  "Git",
+  "Git/GitHub",
   "Problem Solving",
 ];
 
