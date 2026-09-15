@@ -44,6 +44,12 @@ export const projectData = [
 
 export const timelineData = [
   {
+    year: "Aug 2026",
+    title: "Security Affiliate",
+    organization: "OWASP Student Chapter PCCoE",
+    text: "Contributing to various events and projects."
+  },
+  {
     year: "Jul 2026",
     title: "Java Intern",
     organization: "Infosys Springboard",
