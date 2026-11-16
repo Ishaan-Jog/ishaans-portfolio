@@ -18,6 +18,14 @@ export const assets = {
 
 export const projectData = [
   {
+    tag: "Java",
+    title: "CivicPulse",
+    description:
+      "Smart Governance Platform for Administrative Operations with Citizen Service Assistance.",
+    stack: ["Java", "SpringBoot", "Node.js", "MySQL"],
+    link: "https://github.com/pragnasri09/Smart-Governance-Platform-for-Administrative-Operations-with-Citizen-Service-Assistance",
+  },
+  {
     tag: "AI/ML",
     title: "PreSense",
     description:
@@ -50,7 +58,7 @@ export const timelineData = [
     text: "Contributing to various events and projects."
   },
   {
-    year: "Jul 2026",
+    year: "Jul-Sep 2026",
     title: "Java Intern",
     organization: "Infosys Springboard",
     text: "Java Tech Stack Intern at Infosys Springboard Virtual Internship 7.0"
